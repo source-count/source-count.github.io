@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Counting independent sources</title>
+<meta name="description" content="Three rules for weighing a claim, with examples from Egyptian archaeology and Finnish electricity data.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --ink: #0b0b0b; --ink-2: #52514e; --rule: #e1e0d9; --accent: #2a78d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d; --ink: #ffffff; --ink-2: #c3c2b7; --rule: #2c2c2a; --accent: #3987e5;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --ink: #ffffff; --ink-2: #c3c2b7; --rule: #2c2c2a; --accent: #3987e5;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 18px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 700px; margin: 0 auto; padding: 32px 16px 72px; }
+.byline { color: var(--ink-2); font-size: 16px; margin: 0 0 32px; }
+h1 { font-size: 32px; line-height: 1.2; margin: 0 0 12px; }
+h2 { font-size: 22px; margin: 40px 0 8px; }
+p, li { overflow-wrap: anywhere; }
+a { color: var(--accent); }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0 16px; }
+ol.refs { font-size: 15px; color: var(--ink-2); padding-left: 24px; }
+ol.refs li { margin: 6px 0; }
+nav { font-size: 14px; margin-bottom: 16px; }
+</style>
+</head>
+<body>
+<main>
+<nav><a href="../">Source Count</a></nav>
+<h1>How many independent sources does this claim actually have?</h1>
+<p class="byline">By Joni Harju</p>
+<p><em>Count the roots, not the mentions.</em></p>
+<p>Suppose you read the same claim in several places: an academic article, the author's own website, and a republished copy on another site. It feels confirmed. Several sources agree.</p>
+<p>Now ask a different question. Not "in how many places does it appear?" but "how many times was it independently observed?" The answer is often one.</p>
+<p>Intelligence analysts have a rule for this. NATO's STANAG 2511 grading scheme grades a report <em>confirmed</em> only if it can be stated with certainty that it originates from another source than the information already held on the same subject. If the independence of the source cannot be guaranteed, the report is not graded confirmed. At best it can be graded <em>probably true</em>, and only if the quantity and quality of earlier reports make it likely enough [1].</p>
+<p>This essay turns that rule into three questions anyone can ask of a claim. Each comes with a concrete case. One is from Egyptian archaeology, the other from Finnish electricity data.</p>
+<h2>1. The author is the root, not the channel</h2>
+<p>Under the causeway of Khafre's pyramid at Giza lies a deep complex known as the Osiris Shaft. Zahi Hawass excavated it in the summer of 1999 and published the excavation in 2007 [2]. One sentence in that article says that the remains of a skeleton were discovered in the sarcophagus of the lowest chamber.</p>
+<p>The same claim appears in two other places:</p>
+<ul><li>Hawass's own blog post, "The Mysterious Osiris Shaft of Giza", which was online on 18 June 2009 (Internet Archive capture) [3].
+</li><li>A WordPress site, SaharaEgypt, on 15 November 2009, under the byline "This Article by Dr. Zahi Hawass" [4].
+</li></ul>
+<p>A third site, Egyptology News, quoted the opening of the blog post on 26 June 2009 and linked to it [5]. It carries none of the skeleton claim. It is a pointer, not a source.</p>
+<p>That makes three appearances of the claim. How many roots? One. Every appearance leads back to one author describing one excavation.</p>
+<p>The later copies are not even independent of each other. The republished version repeats the blog post word for word: all 1,277 words of the article body match. It keeps a typo ("learned of the it"). It also keeps a sentence announcing a robot exploration "on Thursday, June 9th, 2009" in the future tense. That sentence was already out of date when the blog post was captured on 18 June, and it was still unchanged in the November copy [3, 4].</p>
+<p>There is a second lesson in this case. The copy did not only repeat the claim. It repeated a changed version of it. The 2007 article keeps the finds apart: the skeleton was in the sarcophagus, while amulets and scarabs were found "on the north side of the chamber" [2]. The 2009 post folds them into one sentence: "The sarcophagus contained the remains of a skeleton, along with several amulets dating to the Late Period" [3]. The republished copy carries the folded version [4]. A reader who meets it in two places has seen two copies of one edit, not two confirmations.</p>
+<p>This essay takes no position on what the chamber contained. The point is only how many independent observations stand behind the sentence.</p>
+<p>The same structure appears in data that looks nothing like an excavation report. Fingrid's open-data service publishes two datasets of hourly electricity consumption in Finnish distribution networks [6]:</p>
+<ul><li>dataset 358 splits consumption by customer type (companies and consumers);
+</li><li>dataset 359 splits it by metering method.
+</li></ul>
+<p>The two datasets have different names, different numbers and different categories, and a reader could treat them as two sources. But both descriptions say the consumption figures are derived from metering data that distribution system operators provide to Datahub. Only the classification on top differs: dataset 358 adds customer types supplied by electricity suppliers, and dataset 359 adds metering methods [6].</p>
+<p>We captured both datasets on 38 days between 28 August and 7 October 2026. For every hour and capture day on which both datasets had all their categories, we added up each dataset's categories. That gave 6,144 pairs of totals. In every pair the two totals agreed to within 0.03 per cent, and in no pair were they exactly equal [12]. Dataset 358 also counts about 0.15 per cent fewer accounting points (metered customer sites). We have not shown that this causes the small gap between the totals. Either way, by the publisher's own description, these are two datasets built on one body of metering data, classified two ways.</p>
+<p>None of this is new as an idea:</p>
+<ul><li>Source criticism calls it circular reporting: information that "appears to come from multiple independent sources, but in reality comes from only one source" [7].
+</li><li>Medical systematic reviews treat "studies, rather than reports, as the unit of interest", so several reports of the same study "need to be identified and linked together" [8].
+</li><li>Database researchers showed in 2009 that "a false value can be spread through copying". A majority vote across sources can therefore be wrong, and they built methods to detect the copying [9].
+</li></ul>
+<p>What is missing in everyday practice is the habit of counting. When a claim is presented as well supported, the number of independent roots is rarely written down next to it.</p>
+<h2>2. An unchecked dependency is not independence</h2>
+<p>The first rule says: count roots. The second says: do not count a source as independent just because you have not found what it depends on.</p>
+<p>Copy detection works by finding shared mistakes. A copied error is a fingerprint, and the Osiris typo is one. But a copy of a correct statement leaves no fingerprint. A survey of truth-discovery methods says this directly: the approach "becomes ineffective when some sources copy information from a good source" [10]. Failing to detect a dependency is not evidence of independence. It only means that no check was done.</p>
+<p>The energy data gives a quieter example. The hourly totals of datasets 358 and 359 moved together. In every one of the 4,488 consecutive pairs of captures we compared, both totals changed [12]. It is tempting to read this as evidence of a common root, but it is not. The totals changed at every capture, so that signal was always on. A signal that is always on cannot tell shared roots from separate ones. (Some smaller categories in dataset 359 did not change every time.) The evidence for one root is the agreement of the totals and the publisher's own description, not the fact that they moved together.</p>
+<p>So independence needs three states, not two: independent, dependent and unchecked. Our rule is to count an unchecked source like a dependent one until someone does the check. STANAG 2511 points the same way: if independence cannot be guaranteed, a report cannot be graded confirmed [1].</p>
+<h2>3. Whether a claim is true is settled only by a forecast made before the evidence</h2>
+<p>Counting roots tells you how much weight a claim can carry. It does not tell you whether the claim is true. For that you need the third rule: a question is settled only by a prediction that was written down before the evidence came in.</p>
+<p>Science has a format for this. In a Registered Report, the study plan is peer reviewed "before results are known". A plan that passes receives an in-principle acceptance, a provisional promise to publish that "will not be revoked based on the outcomes" [11]. The prediction cannot be bent to fit the data, because it was fixed first.</p>
+<p>Here is how that applies to our own example. The descriptions of datasets 358 and 359 say that estimated metering data "is generally corrected within 11 days" [6]. Some hours we captured both at day 14 and at day 35. In every such hour the consumption value at day 35 differed from the value at day 14. That held for all five categories, 384 to 408 hours each [12]. The changes were small, and we do not know their cause. The sentence is about estimated data, and later changes may have other reasons.</p>
+<p>But we did not write down a prediction before we looked. Our finding is therefore a description, not a test. It shows that the values still moved after day 14. It does not show that anyone's expectation was wrong, because nobody registered one, including us. The next step is to register the forecast first and let the data arrive afterwards. The forecast gets a timestamped hash, a digital fingerprint that shows it was not changed later. Until then, we report what we saw and what we cannot claim.</p>
+<h2>Three questions for any claim</h2>
+<ol><li><strong>How many independent roots does it have?</strong> Count authors and measurements, not mentions.
+</li><li><strong>Has the dependency between its sources actually been checked?</strong> If not, count those sources as one.
+</li><li><strong>Was the decisive evidence predicted before it arrived?</strong> If not, treat the result as a description, not a confirmation.
+</li></ol>
+<p><strong>The Osiris Shaft sentence:</strong></p>
+<ul><li>it has one root;
+</li><li>the dependency is checked, because the copies share the author, the wording and even a typo;
+</li><li>there was no prediction.
+</li></ul>
+<p><strong>The two Fingrid datasets:</strong></p>
+<ul><li>they have one root, checked by their totals and by the publisher's description;
+</li><li>their values kept changing long after the 11 days in the description;
+</li><li>we observed this, but did not test it in advance.
+</li></ul>
+<p>The Fingrid numbers can be reproduced from Fingrid's open data. The sample report shows the method [12].</p>
+<hr>
+<p><em>Drafted with AI assistance; facts and conclusions checked by the author.</em></p>
+<h2>References</h2>
+<ol class="refs"><li>STANAG 2511 (January 2003), definitions of reliability and credibility, as quoted by V. Dragos on the ETURWG forum, 22 October 2012: <a href="https://eturwg.c4i.gmu.edu/?q=node%2F128">https://eturwg.c4i.gmu.edu/?q=node%2F128</a>. The same scales are reproduced in E. Blasch, K. B. Laskey, A.-L. Jousselme, V. Dragos, P. C. G. Costa, J. Dezert, "URREF Reliability versus Credibility in Information Fusion (STANAG 2511)", PDF hosted by ONERA (file name indicates FUSION 2013): <a href="https://www.onera.fr/sites/default/files/u523/C093-Dezert-Fusion2013.pdf">https://www.onera.fr/sites/default/files/u523/C093-Dezert-Fusion2013.pdf</a>
+</li><li>Z. A. Hawass. "The Discovery of the Osiris Shaft at Giza". In Z. A. Hawass and J. Richards (eds.), <em>The Archaeology and Art of Ancient Egypt: Essays in Honor of David B. O'Connor</em>, vol. I, Annales du Service des Antiquités de l'Égypte, Cahier 36. Cairo, 2007, pp. 379–397 (skeleton and find locations on p. 390).
+</li><li>Z. Hawass. "The Mysterious Osiris Shaft of Giza". drhawass.com blog. Internet Archive capture of 18 June 2009: <a href="http://web.archive.org/web/20090618141406/http://drhawass.com:80/blog/mysterious-osiris-shaft-giza">http://web.archive.org/web/20090618141406/http://drhawass.com:80/blog/mysterious-osiris-shaft-giza</a>
+</li><li>SaharaEgypt. "The Mysterious Osiris Shaft of Giza", 15 November 2009: <a href="https://saharaegypt.wordpress.com/2009/11/15/the-mysterious-osiris-shaft-of-giza/">https://saharaegypt.wordpress.com/2009/11/15/the-mysterious-osiris-shaft-of-giza/</a>
+</li><li>Egyptology News. "The Mysterious Osiris Shaft of Giza", 26 June 2009: <a href="http://egyptology.blogspot.com/2009/06/mysterious-osiris-shaft-of-giza.html">http://egyptology.blogspot.com/2009/06/mysterious-osiris-shaft-of-giza.html</a>
+</li><li>Fingrid open data, datasets 358 and 359: <a href="https://data.fingrid.fi/en/datasets/358">https://data.fingrid.fi/en/datasets/358</a> and <a href="https://data.fingrid.fi/en/datasets/359">https://data.fingrid.fi/en/datasets/359</a>. Source Fingrid Datahub Oy / data.fingrid.fi CC BY 4.0. Licence: <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a> . Changes: hourly totals, ratios and differences computed by the author from daily captures; see reference 12.
+</li><li>Wikipedia. "Circular reporting": <a href="https://en.wikipedia.org/wiki/Circular_reporting">https://en.wikipedia.org/wiki/Circular_reporting</a>
+</li><li>T. Li, J. P. T. Higgins, J. J. Deeks. "Chapter 5: Collecting data". <em>Cochrane Handbook for Systematic Reviews of Interventions</em>: <a href="https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-05">https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-05</a>
+</li><li>X. L. Dong, L. Berti-Equille, D. Srivastava. "Integrating Conflicting Data: The Role of Source Dependence". <em>PVLDB</em> 2(1): 550–561, 2009. doi:10.14778/1687627.1687690. <a href="http://www.vldb.org/pvldb/vol2/vldb09-pvldb47.pdf">http://www.vldb.org/pvldb/vol2/vldb09-pvldb47.pdf</a>
+</li><li>Y. Li, J. Gao, C. Meng, Q. Li, L. Su, B. Zhao, W. Fan, J. Han. "A Survey on Truth Discovery". <em>SIGKDD Explorations</em> 17(2): 1–16, 2016. doi:10.1145/2897350.2897352. <a href="https://engineering.purdue.edu/~lusu/papers/SIGKDDExplorations2015.pdf">https://engineering.purdue.edu/~lusu/papers/SIGKDDExplorations2015.pdf</a>
+</li><li>Center for Open Science. "Registered Reports": <a href="https://www.cos.io/initiatives/registered-reports">https://www.cos.io/initiatives/registered-reports</a>
+</li><li>Source Count. <a href="../report/">"Two datasets, one source: how Finnish electricity consumption data changes after publication" (sample report)</a>.
+</li></ol>
+</main>
+</body>
+</html>
