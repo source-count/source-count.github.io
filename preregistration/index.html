@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preregistration</title>
+<meta name="description" content="Six predictions on revision fingerprints in Finnish electricity data, written on 16 October 2026 before the deciding data existed.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7; --surface: #fcfcfb; --ink: #0b0b0b; --ink-2: #52514e; --border: rgba(11,11,11,0.10);
+  --accent: #2a78d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7; --border: rgba(255,255,255,0.10);
+    --accent: #3987e5;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0d0d0d; --surface: #1a1a19; --ink: #ffffff; --ink-2: #c3c2b7; --border: rgba(255,255,255,0.10);
+  --accent: #3987e5;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+nav { font-size: 14px; margin-bottom: 16px; }
+a { color: var(--accent); }
+h1 { font-size: 32px; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 32px 0 8px; }
+.lead { color: var(--ink-2); font-size: 18px; margin: 0 0 24px; }
+.file { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin: 12px 0; }
+.file h3 { font-size: 17px; margin: 0 0 4px; }
+.file p { margin: 4px 0; color: var(--ink-2); font-size: 15px; }
+code { font: 13px/1.5 ui-monospace, Consolas, monospace; overflow-wrap: anywhere; }
+footer { margin-top: 48px; color: var(--ink-2); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+<nav><a href="../">Source Count</a></nav>
+<h1>Preregistration: revision fingerprints</h1>
+<p class="lead">Six predictions (E1–E6), written on 16 October 2026 before the data that decides them existed, and two addenda. The files are in Finnish and are published here byte for byte.</p>
+
+<div class="file">
+  <h3><a href="ENNUSTEET.md">ENNUSTEET.md</a>: the predictions</h3>
+  <p>Written 2026-10-16 12:37 UTC. E-mailed to the author as a timestamp at 12:41:49 UTC.</p>
+  <p>sha256 <code>19e9bd7518a6979ae166862e3a1e2aabeda5215b0884e8f49b48ac8f04601ecb</code></p>
+</div>
+
+<div class="file">
+  <h3><a href="ENNUSTEET-LISAYS-1.md">ENNUSTEET-LISAYS-1.md</a>: addendum 1</h3>
+  <p>Written 2026-10-16 13:42 UTC. E-mailed at 13:43:08 UTC. Records a deviation and fixes the interpretation of E3–E6.</p>
+  <p>sha256 <code>e30d8f8462a87955c1cae5ea4669bb3a881e9877c49975b04e7be90d6aefa9cd</code></p>
+</div>
+
+<div class="file">
+  <h3><a href="ENNUSTEET-LISAYS-2.md">ENNUSTEET-LISAYS-2.md</a>: addendum 2</h3>
+  <p>Written 2026-10-16 15:20 UTC. E-mailed at 15:20:58 UTC. Corrects the heading of E6; the conditions are unchanged.</p>
+  <p>sha256 <code>1a9b9e95d8552e3c7cc7e79747277935f708043116243edb24db03faacf9db56</code></p>
+</div>
+
+<h2>What the predictions say</h2>
+<p>A correction made after publication can act as a fingerprint of a measurement. If two published figures rest on the same meters, a correction to the metering data shows up in both on the same day and with the same size. E1 and E2 test this pilot result on new data from the existing capture of datasets 358 and 359. E3–E6 cover datasets 124, 193, 360, 361 and 362, whose capture started on 16 October 2026.</p>
+<p>All six are scored after 15 November 2026, for captures from 16 October to 14 November 2026. Every result will be reported, including the predictions that miss.</p>
+<p>Addendum 1 records a deviation: the first capture of the new datasets ran before the analysis script was written. A single capture cannot show a correction, so no deciding data had been seen. Addendum 2 replaces the E6 heading "same root by the publisher's description" with "same calculation formula", because the dataset pages describe the formula, not the measurements.</p>
+
+<h2>How to check</h2>
+<p>Download a file and compute its sha256: <code>sha256sum</code> on Linux, <code>shasum -a 256</code> on macOS or <code>Get-FileHash</code> in Windows PowerShell. The e-mail timestamps can only be shown by the author. The public timestamp is the commit that added these files to the public repository <a href="https://github.com/source-count/source-count.github.io">source-count/source-count.github.io</a>.</p>
+<p>The files name the analysis scripts by their sha256. The scripts will be published with the results.</p>
+
+<footer>Source Count, by Joni Harju. Text prepared with AI assistance. The predictions concern open data from Fingrid and Fingrid Datahub Oy (data.fingrid.fi) under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</footer>
+</main>
+</body>
+</html>
