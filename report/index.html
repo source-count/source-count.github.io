@@ -102,7 +102,9 @@ code { font-size: 13px; overflow-wrap: anywhere; }
 <p>An hour counts as changed if any later capture differed from its first capture. Hours captured only once cannot show a change and are left out (AB01 384, AB02 384, E13 360, E14 360 and E16 360). In 12 hours of E14 and 41 hours of E16, the value changed and later returned to its first value.</p>
 
 <h2>2. The changes keep coming</h2>
-<p>The descriptions of datasets 358 and 359 say that estimated metering data is "generally corrected within 11 days". Yet every hour that we captured at both day 14 and day 35 had a different value at day 35 than at day 14. For 336 of these hours, day 14 was the first capture. Between day 21 and day 35, every hour changed in AB01, AB02, E13 and E14, and 65.2 % of the hours of E16 changed. We captured no hour after day 35, so we do not know when the changes stop. We do not know why they happen. The sentence is about estimated data, and later changes may have other causes.</p>
+<p>The descriptions of datasets 358 and 359 say that estimated metering data is "generally corrected within 11 days". Yet every hour that we captured at both day 14 and day 35 had a different value at day 35 than at day 14. For 336 of these hours, day 14 was the first capture. Between day 21 and day 35, every hour changed in AB01, AB02, E13 and E14, and 65.2 % of the hours of E16 changed. We captured no hour after day 35, so our data cannot show when the changes stop.</p>
+<p>We asked Fingrid Datahub about these later changes. Its answer (email to the author, 22 October 2026), in our words: there is no fixed day after which a value is final; it depends on the case. Most metering data is final within the 11-day balance window, but values are still updated after it, for various reasons. For example, if a meter's remote connection has not worked, its earlier values were estimates, and measured values replace them when the connection is restored or the meter is replaced. Updates can come even a year later for sites that could not be reached earlier, such as sites on islands.</p>
+<p>This is consistent with what we see. Each published value is a total over many accounting points, so a late update at any one of them can change the total, even if most of the points were final long before. We have not checked the explanation against individual points, because the open data shows only totals. Its examples concern meters, so they do not cover unmetered consumption (E16), which also changed.</p>
 <div class="card">
   <h3 id="fig2-title">How much the hourly total moved at each step</h3>
   <div class="legend"><span><span class="key" style="background:var(--series-1)"></span>358 hourly total (by customer type)</span><span><span class="key" style="background:var(--series-2)"></span>359 hourly total (by metering method)</span></div>
@@ -129,7 +131,7 @@ code { font-size: 13px; overflow-wrap: anywhere; }
 
 <h2>What this report does not claim</h2>
 <ul>
-<li>It does not explain why values change.</li>
+<li>It does not show why any particular value changed. Section 2 reports Fingrid Datahub's general explanation, which we have not tested.</li>
 <li>It does not say that Fingrid or Fingrid Datahub did anything wrong. The dataset descriptions themselves say that estimated metering data is corrected after publication.</li>
 <li>It does not make forecasts.</li>
 </ul>
